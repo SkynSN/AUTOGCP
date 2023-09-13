@@ -19,7 +19,7 @@ echo -e "${green}Firewall rule created.${plain}"fi
 echo -e "\n${red}GCP INDIA SERVER 🇮🇳 ${plain}\n"
 
 echo "------------------------------------"
-printf "  India GCP Instance Done ✍️
+printf "  India GCP Instance Done ✍️ "
 echo "------------------------------------"
 echo ""
 
