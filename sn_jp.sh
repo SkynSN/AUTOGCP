@@ -22,7 +22,7 @@ fi
 echo -e "\n${red}GCP JAPAN SERVER 🇯🇵 ${plain}\n"
 
 echo "------------------------------------"
-printf "  Japan GCP Instance Done ✍️
+printf "  Japan GCP Instance Done ✍️ "
 echo "------------------------------------"
 echo ""
 
