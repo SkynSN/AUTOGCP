@@ -19,7 +19,7 @@ fi
 echo -e "\n${red}GCP SINGAPORE SERVER 🇸🇬 ${plain}\n"
 
 echo "------------------------------------"
-printf " Singapore GCP Instance Done ✍️
+printf " Singapore GCP Instance Done ✍️ "
 echo "------------------------------------"
 echo ""
 
