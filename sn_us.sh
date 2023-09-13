@@ -22,7 +22,7 @@ fi
 echo -e "\n${red}GCP UNITED-STATES SERVER 🇺🇲 ${plain}\n"
 
 echo "------------------------------------"
-printf "  US GCP Instance Done ✍️
+printf "  US GCP Instance Done ✍️ "
 echo "------------------------------------"
 echo ""
 
