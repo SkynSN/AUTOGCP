@@ -6,8 +6,6 @@ green='\x1b[32;1m'
 plain='\033[0m'
 
 
-
-
 echo -e "${yellow}Creating instance ...${plain}"
 instance=$(gcloud dataproc clusters create cluster-skyn --region us-central1 --zone us-central1-c --master-machine-type n2d-standard-4 --master-boot-disk-size 100 --num-master-local-ssds 1 --num-workers 2 --worker-machine-type n2d-standard-2 --worker-boot-disk-size 100 --image-version 2.1-ubuntu20)
 echo -e "${green}Instance created.${plain}"
