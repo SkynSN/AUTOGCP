@@ -7,7 +7,7 @@ plain='\033[0m'
 
 echo -e "${yellow}Creating instance ...${plain}"
 
-instance=$(gcloud dataproc clusters create cluster-skyn --region asia-southeast1 --zone asia-southeast1-a --master-machine-type n2d-standard-8 --master-boot-disk-size 100 --num-master-local-ssds 1 --num-workers 2 --worker-machine-type n2d-standard-2 --worker-boot-disk-size 100 --image-version 2.1-ubuntu20)
+instance=$(gcloud dataproc clusters create cluster-skyn --region asia-southeast1 --zone asia-southeast1-b --master-machine-type n2d-standard-4 --master-boot-disk-size 100 --num-master-local-ssds 1 --num-workers 2 --worker-machine-type n2d-standard-2 --worker-boot-disk-size 100 --image-version 2.1-ubuntu20)
 
 echo -e "${green}Instance created.${plain}"
 echo -e "${yellow}Checking firewall rule ...${plain}"
