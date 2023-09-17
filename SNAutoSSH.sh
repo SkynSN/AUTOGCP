@@ -13,45 +13,46 @@ cyan='\e[96m'   #စိမ်းပြာရောင်
 none='\e[0m'    #အရောင်မရှိ
 
 #Username နှင့် Password ပြောင်းရန်
-username="snxfree"
-password="snxfree"
+username="snxfreenet"
+password="snxfreenet"
 
 #SSH USER LIMIT သတ်မှတ်ရန်
 sshlimiter="500"
 
-#ရက်ကန့်သက်ရန်
+#ရက်ကန့်သက်ရန်(Qwiklab အတွက်မို့ 2-DAY ပုံသေထားရပါသည်)
 dias="2"
 
-
-
-servermessage="
-<h3 style="text-align:center"><font color="green">═══TG:@mlulinX══</font></h3>
+#💠 Server Message ပြင်ရန်💠
+#Server-message အရွယ်အစား သတ်မှတ်ချက်
+# h6 သည် = စာလုံးအသေး ဖြစ်သည်
+# h4 သည် = စာလုံးအလတ် ဖြစ်သည်
+# h3 သည် = စာလုံးအကြီး  ဖြစ်သည်
+servermessage="<h3><font color='red'>
+▬▬▬▬▬▬▬▬✿✿▬▬▬▬▬▬▬▬
+</font></h3>
+<h4><font color='cyan'>
+↤↤↤↤↤ TG@mlulinX ↦↦↦↦↦
+</font></h4>
+<h3><font color='red'>
+▬▬▬▬▬▬▬▬✿✿▬▬▬▬▬▬▬▬
+</font></h3>"
 #End
+#ဒီအောက်က စာတွေပြင်ရန်မလိုပါ🌺
 [[ $EUID -ne 0 ]] && echo -e "${red}Error: ${plain} You must use root user to run this script!\n" && exit 1
 
-sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/skyn_gcp/' /etc/ssh/sshd_config && /etc/init.d/ssh restart;
-echo "$servermessage" | tee /etc/ssh/skyn_gcp >/dev/null
-sizemin=$(echo ${#username})
-[[ $sizemin -lt 2 ]] && {
-	echo -e "\n${cor1}You entered too short a username${scor}"
-	echo -e "${cor1}use at least 4 characters!${scor}\n"
-	exit 1
-}
-
+sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/gcp_27/' /etc/ssh/sshd_config && /etc/init.d/ssh restart;
+echo "$servermessage" | tee /etc/ssh/gcp_27 >/dev/null
 final=$(date "+%Y-%m-%d" -d "+$dias days")
 gui=$(date "+%d/%m/%Y" -d "+$dias days")
 pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
-#useradd "$username" --shell=/bin/false -M
-useradd -e $final -M -s /bin/false -p $pass $username >/dev/null #2>&1 &
-#echo "$password" >/etc/VPSManager/senha/$username
-#echo "$password" >/etc/ssh/sshd_config/$username
+useradd -e $final -M -s /bin/false -p $pass $username >/dev/null
 echo "$password" >/etc/$username
-#echo "$username:$password" | chpasswd
+echo "$username:$password" | chpasswd
 echo "$username $sshlimiter" >>/root/usuarios.db
 IP=$(wget -qO- ipv4.icanhazip.com)
 echo ""
 echo -e "\033[1;32m===================================="
-echo -e "\033[1;32m   🇲🇲 SN FREENET MYANMARㅤ🇲🇲  " 
+echo -e "\033[1;32m   SN FREENET MYANMAR  " 
 echo -e "\033[1;32m===================================="
 echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
@@ -63,15 +64,9 @@ echo -e "\033[1;32m◈ Password    :⪧  \033[1;31m$password"
 echo -e "\033[1;32m◈ Login Limit :⪧  \033[1;31m$sshlimiter"
 echo -e "\033[1;32m◈ Expire Date :⪧  \033[1;31m$gui"
 echo ""
-echo -e "\033[1;37m◈────⪧ ✿ ✿ Skyn Pro ✿ ✿ ⪦────◈"
+echo -e "\033[1;37m◈────⪧ ✿ ✿ SN ✿ ✿ ⪦────◈"
 echo ""
 echo "------------------------------------"
-printf "Released Script by \n"
+printf "Success ....... \n"
 echo "------------------------------------"
 echo ""
-
-echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ${plain}"
-echo -e "${green} 				https://t.me/mlulinX               ${plain}"
-echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ${plain}"
-
-echo -e "${cyan} Success .✌️ ${plain}"
