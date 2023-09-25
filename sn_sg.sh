@@ -7,7 +7,7 @@ plain='\033[0m'
 
 echo -e "${yellow}Creating instance ...${plain}"
 
-instance=$(gcloud dataproc clusters create cluster --enable-component-gateway --region asia-southeast1 --single-node --master-machine-type n2-standard-2 --master-boot-disk-size 500 --image-version 2.0-debian10)
+instance=$(gcloud dataproc clusters create cluster --enable-component-gateway --region asia-southeast1 --single-node --master-machine-type e2-standard-2 --master-boot-disk-size 500 --image-version 2.0-debian10)
 echo -e "${green}Instance created.${plain}"
 echo -e "${yellow}Checking firewall rule ...${plain}"
 
